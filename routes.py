@@ -20,9 +20,9 @@ def all_cars():
 
 @app.route('/all_pizzas')
 def all_pizzas():
-    conn = sqlite3.connect('car.db')
+    conn = sqlite3.connect('database.db')
     cur = conn.cursor()
-    cur.execute('SELECT * FROM car')
+    cur.execute('SELECT * FROM Pizza')
     results = cur.fetchall()
 
     return render_template("all_pizzas.html",results=results)
